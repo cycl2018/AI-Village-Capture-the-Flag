@@ -1,0 +1,25 @@
+Scenario
+A ML model has been built to detect a 0-day. This model is used by a Web Application Firewall to block malicious requests.
+
+Objective
+The goal of the challenge is to discover what the 0-day is by what it is blocking, and then bypass the WAF to exploit the system.
+
+PS: The WAF assesses malicious strings in 5 characters blocks.
+
+# Submission Helper
+
+import base64
+
+## input = base64.b64encode(b"This was a test of your emergency systems").decode()
+input = "mFzaC=="
+data = json.dumps(
+    {"input": input}
+)
+
+try:
+    r = requests.post("https://waf.fly.dev/score", data=data)
+    print(r.text)
+except requests.exceptions.ConnectionError:
+    print("Connection problems. Contact the CTF organizers.")
+
+output：{"waf": "MALICIOUS REQUEST CAUGHT BY WAF", "output": [["mFzaC", 0.00952]]}
