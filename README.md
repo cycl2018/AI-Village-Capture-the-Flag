@@ -23,7 +23,7 @@ inference: Hill climbing algorithm,too.
 
 crop1: Hill climbing algorithm,too.
 
-crop2: I don‘t konw it,maybe the sponsor announced hint earlier, I would be interested in solving him.
+crop2: I don‘t konw it,maybe the sponsor announced hint earlier, I would be interested in solving it.
 
 forensics: model.summary().
 
